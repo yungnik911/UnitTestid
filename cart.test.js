@@ -27,3 +27,9 @@ test('100 euro suurusele ostule on saatmine tasuta', () => {
 test('annab vea, kui items ei ole massiiv', () => {
   expect(() => calculateTotal('abc')).toThrow();
 });
+test('FREESHIP teeb saatmise tasuta', () => {
+  expect(calculateTotal(
+    [{ price: 10, qty: 1 }],
+    'FREESHIP'
+  )).toBe(10);
+});
